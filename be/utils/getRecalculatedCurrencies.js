@@ -1,12 +1,13 @@
-export default function getRecalculatedCurrencies(state, base, value) {
-  const copy = {...state};
-  const rates = {...state.rates};
-  for (let rate in rates) { 
+export default function getRecalculatedCurrencies(originalExchangeInfo, base, value) {
+  const copiedExchangeInfo = {...originalExchangeInfo};
+  const copiedRates = {...originalExchangeInfo.rates};
+  for (let rate in copiedRates) { 
     if (rate !== base) {
-      rates[rate] = Math.round((+value * rates[rate] * 10000 / rates[base])) / 10000 ;
+      copiedRates[rate] = Math.round((+value * copiedRates[rate] * 10000 / copiedRates[base])) / 10000;
     }
   }
-  rates[base] = +value;
-  copy.rates = rates;
-  return copy;
+
+  copiedRates[base] = +value;
+  copiedExchangeInfo.rates = copiedRates;
+  return copiedExchangeInfo;
 }
