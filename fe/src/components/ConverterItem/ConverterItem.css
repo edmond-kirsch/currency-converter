@@ -1,0 +1,27 @@
+.converter-item {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: 'label input' '. description';
+  padding: 10px;
+}
+.converter-item__label {
+  grid-area: label;
+  font-weight: 900;
+}
+.converter-item__input {
+  grid-area: input;
+  color: #000;
+  border: none;
+  padding: 2px 10px;
+}
+.converter-item__input::-webkit-outer-spin-button,
+.converter-item__input::-webkit-inner-spin-button {
+	display: none;
+}
+.converter-item__input:focus {
+  outline: none;
+}
+.converter-item__description {
+  grid-area: description;
+  justify-self: flex-end;
+}
