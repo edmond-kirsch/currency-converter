@@ -9,14 +9,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors());
-
 let state;
 
 app.get('/', async (req, res) => {
   try {
     const {base, value} = url.parse(req.url, true).query;
     if (!state) {
-      const requestURL = `https://api.exchangerate.host/latest?base=USD&amount=${value}`;
+      const requestURL = `${process.env.REQUESTURL}?base=USD&amount=${value}`;
       const response = await fetch(requestURL);
       state = await response.json();
       res.send(state);
