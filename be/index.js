@@ -15,6 +15,10 @@ app.get('/', async (req, res) => {
   try {
     const { base, value } = url.parse(req.url, true).query;
     if (!base || !value) {
+      return res.sendStatus(500);
+    }
+
+    if (value && value < 0) {
       return res.sendStatus(400);
     }
 
@@ -32,7 +36,7 @@ app.get('/', async (req, res) => {
       return res.send(result);
     }
   } catch(e) {
-    res.sendStatus(500);
+    return res.sendStatus(500);
   }
 })
 
