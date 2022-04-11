@@ -15,7 +15,7 @@ app.get('/', async (req, res) => {
   try {
     const { base, value } = url.parse(req.url, true).query;
     if (!base || !value) {
-      res.sendStatus(400);
+      return res.sendStatus(400);
     }
 
     if (!exchangeRates) {
@@ -23,13 +23,13 @@ app.get('/', async (req, res) => {
       const response = await fetch(requestURL);
       exchangeRates = await response.json();
       res.status(200).type('application/json');
-      res.send(exchangeRates);
+      return res.send(exchangeRates);
     }
 
     if (exchangeRates) {
       const result = getRecalculatedCurrencies(exchangeRates, base, value);
       res.status(200).type('application/json');
-      res.send(result);
+      return res.send(result);
     }
   } catch(e) {
     res.sendStatus(500);
