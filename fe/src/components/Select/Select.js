@@ -10,7 +10,7 @@ export default function Select({ viewedCurrencies, setViewedCurrencies, setIsSel
   return (
     <div className="select-container">
       {CURRENCIES.filter(currencyItem => !viewedCurrencies.includes(currencyItem.abbr)).map(currencyItem => {
-        return <div className="select-container__item" key={currencyItem.id} onClick={() => addCurrency(currencyItem.abbr)}><b>{currencyItem.abbr}</b> {el.description}</div>
+        return <div className="select-container__item" key={currencyItem.id} onClick={() => addCurrency(currencyItem.abbr)}><b>{currencyItem.abbr}</b> {currencyItem.description}</div>
       })}
     </div>
   )
