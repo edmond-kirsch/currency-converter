@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import './Converter.css';
 import ConverterItem from "../ConverterItem/ConverterItem";
 import Select from '../Select/Select';
-import CURRENCIES from '../../utils/currencies';
-import { initialSetOfCurrencies, baseCurrency } from '../../utils/initialSetOfCurrencies';
+import CURRENCIES from '../../constants/currencies';
+import { initialSetOfCurrencies, baseCurrency } from '../../constants/initialSetOfCurrencies';
 import { IoIosAddCircle } from 'react-icons/io';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
@@ -34,7 +34,7 @@ export default function Converter() {
       <h1>Currency converter</h1>
       {currencies ? 
         <>
-          <h5 className="converter__header">Rates are provided by <i>exchange rate app</i></h5>
+          <h2 className="converter__header">Rates are provided by <i>exchange rate app</i></h2>
           <p>Last updated {currencies.date}</p>
           <form className="converter__form">
           {viewedCurrencies.map(currencyBase => {

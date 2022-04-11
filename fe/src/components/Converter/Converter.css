@@ -8,6 +8,7 @@
 .converter__header {
   color: #063970;
   margin: 0;
+  font-size: 18px;
 }
 .converter__form {
   display: flex;

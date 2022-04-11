@@ -1,4 +1,4 @@
-import CURRENCIES from "../../utils/currencies";
+import CURRENCIES from "../../constants/currencies";
 import './Select.css';
 
 export default function Select({ viewedCurrencies, setViewedCurrencies, setIsSelect }) {

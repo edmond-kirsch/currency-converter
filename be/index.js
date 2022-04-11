@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
       return res.sendStatus(500);
     }
 
-    if (value && value < 0) {
+    if (+value && +value < 0) {
       return res.sendStatus(400);
     }
 
