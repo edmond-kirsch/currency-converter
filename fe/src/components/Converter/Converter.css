@@ -1,0 +1,25 @@
+.converter {
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 15px;
+  position: relative;
+  text-align: start;
+}
+.converter__header {
+  color: #063970;
+  margin: 0;
+}
+.converter__form {
+  display: flex;
+  flex-direction: column;
+  background-color: #abdbe3;
+  padding: 15px;
+  text-align: center;
+}
+.converter__add-currency {
+  width: 100px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 0 10px 10px;
+}
