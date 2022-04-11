@@ -1,8 +1,12 @@
 import './ConverterItem.css';
 
 export default function ConverterItem({ currencyInfo, rate, setBase, setCurrencies, setValue }) {
-  let view = rate.toString().replace(/^0(?!\.|$)/, '');
+  const view = rate.toString().replace(/^0(?!\.|$)/, '');
   const handleInput = e => {
+    if (['+','*','-','/'].includes(e.nativeEvent.data)) {
+      return;
+    }
+
     setCurrencies((prevState) => {
       const result = {...prevState};
       result.rates[currencyInfo.abbr] = +e.target.value;

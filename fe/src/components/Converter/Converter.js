@@ -46,10 +46,10 @@ export default function Converter() {
                                     setCurrencies={setCurrencies}
                                     setValue={setValue}/>
             })}
-            {isSelect ? 
-              <button onClick={toggleSelect} className="converter__add-currency"><AiFillCloseCircle /> Close</button>
-              : <button onClick={toggleSelect} className="converter__add-currency"><IoIosAddCircle /> Add currency</button>}
-            {isSelect ? 
+            {isSelect ?
+              <button type='button' onClick={toggleSelect} className="converter__add-currency"><AiFillCloseCircle /> Close</button>
+              : <button type='button' onClick={toggleSelect} className="converter__add-currency"><IoIosAddCircle /> Add currency</button>}
+            {isSelect ?
               <Select setViewedCurrency={setViewedCurrency} viewedCurrency={viewedCurrency} setIsSelect={setIsSelect} /> 
               : null}
             </form>
